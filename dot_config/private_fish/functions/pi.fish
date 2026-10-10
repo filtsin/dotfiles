@@ -23,11 +23,13 @@ function _pi_bwrap
        --tmpfs /tmp \
        --bind "$HOME/.cache/pi-jiti" /tmp/jiti \
        --dir /home \
+       --bind "$HOME/.config/herdr" "$HOME/.config/herdr" \
        --bind "$HOME/.local/share/chezmoi" "$HOME/.local/share/chezmoi" \
        --bind "$HOME/.pi-lens" "$HOME/.pi-lens" \
        --bind "$HOME/.agents" "$HOME/.agents" \
        --bind "$HOME/.cargo/bin" "$HOME/.cargo/bin" \
        --ro-bind "$HOME/.local/share/nvim/mason" "$HOME/.local/share/nvim/mason" \
+       --ro-bind "$HOME/.config" "$HOME/.config" \
        --bind "$HOME/go" "$HOME/go" \
        --bind-try "$HOME/.local/share/rtk" "$HOME/.local/share/rtk" \
        --bind-try "$HOME/.cache/codebase-memory-mcp" "$HOME/.cache/codebase-memory-mcp" \

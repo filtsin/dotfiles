@@ -1,0 +1,31 @@
+onboarding = false
+
+[theme]
+name = "terminal"
+auto_switch = false
+
+[ui]
+prompt_new_tab_name = false
+
+[ui.sound]
+enabled = false
+
+[ui.toast]
+delivery = "herdr"
+
+[keys]
+goto = ""
+
+[[keys.command]]
+key = "prefix+k"
+type = "plugin_action"
+command = "herdr-bar.open"
+description = "command bar"
+
+[theme.custom]
+sidebar_bg = "#24201c"
+active_row_bg = "#322b25"
+selection_bg = "#39312b"
+panel_bg = "reset"
+surface_dim = "#c0b9af"
+accent = "#8a7355"

@@ -1,8 +1,6 @@
 {{- $environment := promptStringOnce . "environment" "Environment (home/work)" -}}
-{{- $fontSize := promptIntOnce . "alacrittyFontSize" "Alacritty font size" -}}
 {{- $email := promptStringOnce . "email" "Git email address" -}}
 
 [data]
     environment = {{ $environment | quote }}
-    alacrittyFontSize = {{ $fontSize }}
     email = {{ $email | quote }}

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# {{ include ".chezmoidata/herdr.yaml" | sha256sum }}
+
+{{ range .herdrPlugins }}
+if herdr plugin list | grep -Fq -- {{ . | quote }}; then
+    echo "Already installed: {{ . }}"
+else
+    echo "Installing: {{ . }}"
+    herdr plugin install {{ . | quote }} --yes
+fi
+{{ end }}

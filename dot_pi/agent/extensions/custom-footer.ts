@@ -78,9 +78,18 @@ export default function (pi: ExtensionAPI) {
   });
 
   async function refreshDirty() {
-    const insideWorkTree = await pi
-      .exec("git", ["rev-parse", "--is-inside-work-tree"], { cwd: pi.cwd })
-      .catch(() => undefined);
+    // This runs fire-and-forget (void refreshDirty()) across awaits. If a session
+    // replacement (newSession/fork/switchSession) or reload invalidates the
+    // extension runtime while it is in flight, pi.exec throws synchronously via
+    // assertActive(). A .catch() does NOT catch that synchronous throw, and an
+    // uncaught rejection crashes pi. Guard every call; this footer instance is
+    // abandoned after replacement anyway (a fresh one is created for the new session).
+    let insideWorkTree;
+    try {
+      insideWorkTree = await pi.exec("git", ["rev-parse", "--is-inside-work-tree"], { cwd: pi.cwd });
+    } catch {
+      return;
+    }
 
     if (insideWorkTree?.stdout.trim() !== "true") {
       if (isDirty) {
@@ -90,12 +99,14 @@ export default function (pi: ExtensionAPI) {
       return;
     }
 
-    const result = await pi
-      .exec("git", ["diff", "--stat"], { cwd: pi.cwd })
-      .catch(() => undefined);
-    const resultStaged = await pi
-      .exec("git", ["diff", "--cached", "--stat"], { cwd: pi.cwd })
-      .catch(() => undefined);
+    let result;
+    let resultStaged;
+    try {
+      result = await pi.exec("git", ["diff", "--stat"], { cwd: pi.cwd });
+      resultStaged = await pi.exec("git", ["diff", "--cached", "--stat"], { cwd: pi.cwd });
+    } catch {
+      return;
+    }
     const dirty =
       (result?.stdout.trim().length ?? 0) > 0 ||
       (resultStaged?.stdout.trim().length ?? 0) > 0;
