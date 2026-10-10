@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Skills list checksum:
+# {{ include ".chezmoidata/skills.yaml" | sha256sum }}
+
+{{ range .skills }}
+npx --yes skills add {{ .source | quote }} \
+  {{ range .names }}--skill {{ . | quote }} \
+  {{ end }}--global --agent pi --yes
+{{ end }}

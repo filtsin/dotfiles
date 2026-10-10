@@ -1,0 +1,24 @@
+{
+  "lastChangelogVersion": "1.0.0",
+  "theme": "dark",
+  "packages": [
+    "npm:pi-llama-cpp",
+    "npm:pi-lens",
+    "npm:@rahulmutt/pi-ralph",
+    "npm:@firstpick/pi-extension-stats",
+    "npm:pi-token-speed"
+  ],
+  "llamaSettings": {
+    "servers": [
+      {
+        "url": "http://127.0.0.1:8080"
+      }
+    ]
+  },
+  "defaultProvider": "llama-server=http://127.0.0.1:8080",
+  "defaultModel": "bartowski/Qwen3.8-27B-GGUF:Q4_K_M",
+  "defaultTools": [
+      "+codemode"
+  ],
+  "tuiMode": "regular"
+}

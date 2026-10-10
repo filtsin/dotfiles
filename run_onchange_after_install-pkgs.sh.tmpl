@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# {{ include ".chezmoidata/pkgs.yaml" | sha256sum }}
+
+packages=(
+{{- range .pkgs }}
+  {{ . | quote }}
+{{- end }}
+)
+
+missing=()
+
+for pkg in "${packages[@]}"; do
+  if ! pacman -Q "$pkg" >/dev/null 2>&1; then
+    missing+=("$pkg")
+  fi
+done
+
+if ((${#missing[@]} > 0)); then
+  printf 'Installing missing packages: %s\n' "${missing[*]}"
+  sudo pacman -S --needed --noconfirm "${missing[@]}"
+else
+  echo "All needed packages are already installed."
+fi

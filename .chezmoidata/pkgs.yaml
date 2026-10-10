@@ -1,0 +1,10 @@
+pkgs:
+  - alacritty
+  - neovim
+  - ripgrep
+  - fd
+  - lsd
+  - bat
+  - zoxide
+  - noctalia
+  - ttf-jetbrains-mono

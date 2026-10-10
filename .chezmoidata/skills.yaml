@@ -1,0 +1,15 @@
+skills:
+  - source: mattpocock/skills
+    names:
+      - code-review
+      - codebase-design
+      - diagnosing-bugs
+      - grill-me
+      - grill-with-docs
+      - implement
+      - implement-spec
+      - improve-codebase-architecture
+      - prototype
+      - to-spec
+      - to-tickets
+      - retro
