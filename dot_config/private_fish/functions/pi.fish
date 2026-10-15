@@ -2,7 +2,7 @@ function _pi_bwrap
    set -l git_bind
 
    if test -d "$PWD/.git"
-       set git_bind --ro-bind "$PWD/.git" "$PWD/.git"
+       set git_bind --bind "$PWD/.git" "$PWD/.git"
    end
 
    # jiti кэширует транспиляцию TS/ESM-расширений в $TMPDIR/jiti.

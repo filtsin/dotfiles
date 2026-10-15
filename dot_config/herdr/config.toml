@@ -22,6 +22,18 @@ type = "plugin_action"
 command = "herdr-bar.open"
 description = "command bar"
 
+[[keys.command]]
+key = "prefix+g"
+type = "plugin_action"
+command = "worktrunk.open"
+description = "Worktree: switch / create from default branch"
+
+[[keys.command]]
+key = "prefix+d"
+type = "plugin_action"
+command = "worktrunk.remove"
+description = "Worktree: remove"
+
 [theme.custom]
 sidebar_bg = "#24201c"
 active_row_bg = "#322b25"

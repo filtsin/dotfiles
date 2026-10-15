@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.1.0",
+  "lastChangelogVersion": "1.2.0",
   "theme": "dark",
   "packages": [
     "npm:pi-llama-cpp",
@@ -16,8 +16,8 @@
       }
     ]
   },
-  "defaultProvider": "llama-server=http://127.0.0.1:8080",
-  "defaultModel": "bartowski/Qwen3.8-27B-GGUF:Q4_K_M",
+  "defaultProvider": "openai",
+  "defaultModel": "gpt-6-luna",
   "defaultTools": [
     "+codemode"
   ],
