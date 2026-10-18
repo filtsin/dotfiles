@@ -43,7 +43,7 @@ function _pi_bwrap
 end
 
 function pi
-   echo "running in bwrap without network"
+   echo "running in bwrap"
    set -g _PI_ARGS $argv
    _pi_bwrap
 end
