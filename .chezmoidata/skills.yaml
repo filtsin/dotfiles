@@ -6,3 +6,6 @@ skills:
       - grilling
       - domain-modelling
       - retro
+  - source: DietrichGebert/ponytail
+    names:
+      - ponytail
