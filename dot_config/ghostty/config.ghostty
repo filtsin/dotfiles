@@ -1,0 +1,25 @@
+background = #1a1b1e
+foreground = #d4d4d8
+selection-background = #34363b
+selection-foreground = #f4f4f5
+cursor-color = #d4d4d8
+cursor-style-blink = false
+font-family = JetBrains Mono
+confirm-close-surface = false
+
+palette = 0=#1a1b1e
+palette = 1=#ef6b73
+palette = 2=#9acb7a
+palette = 3=#e7c787
+palette = 4=#72a7f5
+palette = 5=#c792ea
+palette = 6=#70c0ba
+palette = 7=#d4d4d8
+palette = 8=#72747a
+palette = 9=#ef6b73
+palette = 10=#9acb7a
+palette = 11=#e7c787
+palette = 12=#72a7f5
+palette = 13=#c792ea
+palette = 14=#70c0ba
+palette = 15=#f4f4f5
