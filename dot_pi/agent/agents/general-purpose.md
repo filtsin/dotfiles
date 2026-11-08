@@ -3,7 +3,7 @@ description: "General-purpose agent for researching complex questions, searching
 display_name: Agent
 tools: all
 prompt_mode: append
-model: openai/gpt-6.1-luna
+model: openai/gpt-6-luna
 thinking: medium
 ---
 

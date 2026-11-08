@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.2.0",
+  "lastChangelogVersion": "1.4.0",
   "theme": "dark",
   "packages": [
     "npm:pi-llama-cpp",
@@ -21,5 +21,6 @@
   "defaultTools": [
     "+codemode"
   ],
-  "tuiMode": "regular"
+  "deviceId": "8a7c1516-599e-4eb3-b004-303415e93110",
+  "hideThinkingBlock": false
 }

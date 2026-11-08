@@ -11,7 +11,7 @@ prompt_new_tab_name = false
 enabled = false
 
 [ui.toast]
-delivery = "herdr"
+delivery = "system"
 
 [keys]
 goto = ""

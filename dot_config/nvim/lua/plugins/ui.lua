@@ -6,7 +6,7 @@ return {
         opts = {
             palettes = {
                 all = {
-                    bg1 = '#1d1a17'
+                    bg1 = '#1a1b1e'
                 }
             }
         },
