@@ -47,5 +47,15 @@ return {
     {
         'nmac427/guess-indent.nvim',
         opts = {},
+    },
+    {
+        'kokusenz/deltaview.nvim',
+        opts = {},
+        keys = {
+            { '<leader>dt', ':DeltaMenu<CR>' },
+            { '<leader>dm', ':DeltaMenu!<CR>' },
+            { '<leader>dl', ':DeltaView<CR>' },
+            { '<leader>da', ':Delta<CR>' },
+        },
     }
 }

@@ -1,13 +1,23 @@
 [user]
 	email = {{ .email | quote }}
 	name = Ilya Filtsin
+
 [alias]
 lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+
 [pull]
 	rebase = true
-[diff]
-	tool = diffuse
+
 [merge]
-	tool = kdiff3
+	conflictStyle = zdiff3
+
 [core]
 	autocrlf = false
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	dart = true
